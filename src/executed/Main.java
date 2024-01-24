@@ -19,14 +19,6 @@ public class Main extends Menu{
         hi.run();
         
     }
-    
-//    public static void main(String[] args) {
-//        NormalizeText nText = new NormalizeText();
-//        ReadAndWriteFile file = new ReadAndWriteFile();
-//        nText.loadData();
-//        nText.normalizeText();
-//        nText.writeData();
-//    }
 
     @Override
     public void execute(int choice) {
