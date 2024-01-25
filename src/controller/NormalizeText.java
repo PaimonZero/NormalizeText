@@ -69,12 +69,15 @@ public class NormalizeText {
 
                 if (word.contains("\"")) {
                     if (word.equals("\"")) {
-                        result.append(word);
-                        if(isInQuotes == true){
+                        if(isInQuotes == true){     //dấu " thứ 2
                             isInQuotes = false;
-                        } else {
-                            isInQuotes = true;
+                        } else {                    //dấu " thứ 1
+                            isInQuotes = true;      //dấu " thứ 1 và ở đầu đoạn văn
+                            if(isFirstWordInLine == false) {        //dấu " thứ 1 và ở giữa đoạn văn
+                                result.append(" ");              //thêm dấu cách trc dấu "
+                            }
                         }
+                        result.append(word);
                         continue;
                     }
                     
