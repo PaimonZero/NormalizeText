@@ -38,7 +38,8 @@ public class Main extends Menu{
                 System.out.println("Program closing!");
                 break;
             default:
-                throw new AssertionError();
+                System.out.println("We don't have that option!");
+                break;
         }
     }
 }
