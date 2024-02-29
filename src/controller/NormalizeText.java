@@ -51,10 +51,11 @@ public class NormalizeText {
         boolean isInQuotes = false;
         boolean capitalizeNextWord = false;
         String line;
+        StringBuilder result = new StringBuilder();
 
         for (int n = 0; n < currentFile.getData().size(); n++) {
             line = currentFile.getData().get(n); // Lấy câu
-            StringBuilder result = new StringBuilder();
+            
             if (line.isBlank() || line.isEmpty()) {
                 continue;
             }
@@ -71,6 +72,9 @@ public class NormalizeText {
                     if (word.equals("\"")) {
                         if(isInQuotes == true){     //dấu " thứ 2
                             isInQuotes = false;
+                            if(i == (words.length - 1) && n != (currentFile.getData().size() - 1)){     //nếu là kí tự cuối cùng trong câu
+                                result.append(".");
+                            }
                         } else {                    //dấu " thứ 1
                             isInQuotes = true;      //dấu " thứ 1 và ở đầu đoạn văn
                             if(isFirstWordInLine == false) {        //dấu " thứ 1 và ở giữa đoạn văn
